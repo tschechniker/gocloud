@@ -18,6 +18,14 @@ jobs:
       with:
         go-version: ^1.13
 
+    - name: install swag
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/bin
+        wget https://github.com/swaggo/swag/releases/download/v1.6.9/swag_1.6.9_Linux_x86_64.tar.gz
+        tar -C $GITHUB_WORKSPACE/bin -zxvf swag_1.6.9_Linux_x86_64.tar.gz
+        echo "::add-path::$GITHUB_WORKSPACE/bin"
+        chmod +x $GITHUB_WORKSPACE/bin/swag
+
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
