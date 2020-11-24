@@ -29,6 +29,9 @@ jobs:
             dep ensure
         fi
 
+    - name: generate Swagger
+      run: swag init
+
     - name: Build
       run: go build -v .
 
