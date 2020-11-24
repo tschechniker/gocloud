@@ -38,7 +38,9 @@ jobs:
         fi
 
     - name: generate Swagger
-      run: swag init
+      run: |
+        echo $PATH
+        swag init
 
     - name: Build
       run: go build -v .
